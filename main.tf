@@ -34,11 +34,10 @@ resource "aws_s3_bucket_policy" "allow-cloudfront" {
       "Sid": "AllowCluoudFront",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "cloudfront.amazonaws.com"
+        Service = "cloudfront.amazonaws.com" 
       },
       "Action": [
         "s3:GetObject",
-        "s3:ListBucket",
       ],
       "Resource":  "${aws_s3_bucket.firstbucket.arn}/*"
       Condition = {
