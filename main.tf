@@ -39,7 +39,7 @@ resource "aws_s3_bucket_policy" "allow-cloudfront" {
       "Action": [
         "s3:GetObject",
       ],
-      "Resource":  "${aws_s3_bucket.firstbucket.arn}/*"
+      "Resource":  "${aws_s3_bucket.firstbucket.arn}/*",
       Condition = {
         StringEquals = {
              "AWS:SourceArn" = aws_cloudfront_distribution.s3_distribution.arn
